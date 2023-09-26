@@ -3,9 +3,9 @@ import Feed from "@components/Feed";
 const Home = () => (
   <section className='w-full flex-center flex-col'>
     <h1 className='head_text text-center'>
-      Request and Order
+      Order/Request
       <br className='max-md:hidden' />
-      <span className='orange_gradient text-center'> Daily Activities</span>
+      <span className='orange_gradient text-center'> Anything</span>
     </h1>
     <p className='desc text-center'>
       Campus Express is an open source request system for University 

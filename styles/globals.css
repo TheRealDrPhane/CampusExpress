@@ -75,15 +75,15 @@ This will give the .gradient element a background color of #F3F3F3 without any g
 }
 
 .black_btn {
-  @apply rounded-md border border-[#273248] bg-[#273248] py-3.5 px-8 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-roboto flex items-center justify-center;
+  @apply rounded-md border border-[#273248] bg-[#281763] py-3.5 px-8 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-roboto flex items-center justify-center;
 }
 
 .outline_btn {
-  @apply rounded-md border font-roboto border-[#273248] bg-transparent py-1.5 px-5 text-black transition-all hover:bg-[#273248] hover:text-white text-center text-sm flex items-center justify-center;
+  @apply rounded-md border font-roboto border-[#281763] bg-transparent py-1.5 px-5 text-black transition-all hover:bg-[#273248] hover:text-white text-center text-sm flex items-center justify-center;
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-roboto font-black leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-roboto font-black leading-[1.15] text-[#281763] sm:text-6xl;
 }
 
 .orange_gradient {
@@ -95,7 +95,7 @@ This will give the .gradient element a background color of #F3F3F3 without any g
 }
 
 .blue_gradient {
-  @apply bg-gradient-to-r font-roboto from-[#13073b] to-[#13073b] bg-clip-text text-transparent;
+  @apply bg-gradient-to-r font-roboto from-[#13073b] to-[#281763] bg-clip-text text-transparent;
 }
 
 .desc {
@@ -111,7 +111,7 @@ This will give the .gradient element a background color of #F3F3F3 without any g
 }
 
 .glassmorphism {
-  @apply rounded-md border border-gray-200 bg-[#E8E8E8] p-10;
+  @apply rounded-md border border-gray-200 bg-[#d5e2ff] p-10;
 }
 
 .prompt_layout {
