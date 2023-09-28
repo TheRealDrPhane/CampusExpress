@@ -19,7 +19,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex-between w-full mb-16 pt-3 pr-5" >
+    <nav className="flex-between w-full mb-16 pt-3 pr-5">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           src="/assets/images/logo_1.svg"
@@ -28,8 +28,12 @@ const Nav = () => {
           height={50}
           className="object-contain"
         />
-        <p className="logo_text">Campus Express <span className=" bg-[#4cae1f] text-sm sm:text-xs py-2 px-3 text-white rounded-full">Experimental Mode</span></p>
-        
+        <p className="logo_text">
+          Campus Express{" "}
+          {/* <span className="bg-[#4cae1f] text-sm sm:hidden py-2 px-3 text-white rounded-full">
+            Experimental Mode
+          </span> */}
+        </p>
       </Link>
 
       {/* Desktop Navigation */}
@@ -66,7 +70,7 @@ const Nav = () => {
                   }}
                   className="black_btn"
                 >
-                  Sign in with Google
+                  Sign up with Google
                 </button>
               ))}
           </>
@@ -127,7 +131,7 @@ const Nav = () => {
                   }}
                   className="black_btn"
                 >
-                  Sign in
+                  Sign up
                 </button>
               ))}
           </>

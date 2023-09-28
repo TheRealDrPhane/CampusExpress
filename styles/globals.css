@@ -75,7 +75,11 @@ This will give the .gradient element a background color of #F3F3F3 without any g
 }
 
 .black_btn {
-  @apply rounded-md border border-[#273248] bg-[#281763] py-3.5 px-8 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-roboto flex items-center justify-center;
+  @apply rounded-md border border-[#273248] bg-[#281763] py-3.5 px-8 text-white transition-all hover:bg-white hover:text-[#281763] text-center text-sm font-roboto flex items-center justify-center;
+}
+
+.black_btn_order {
+  @apply rounded-md border border-[#273248] bg-[#281763] py-4 px-8 text-white transition-all hover:bg-white hover:text-[#281763] text-center text-sm font-roboto flex items-center justify-center;
 }
 
 .outline_btn {
@@ -134,7 +138,7 @@ This will give the .gradient element a background color of #F3F3F3 without any g
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-roboto font-semibold text-2xl text-black tracking-wide pt-4;
+  @apply font-roboto font-semibold text-2xl text-black tracking-wide pt-4;
 }
 
 .dropdown {

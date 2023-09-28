@@ -1,12 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
-    <div className='mt-16 prompt_layout'>
+    <div className="mt-16 prompt_layout">
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -35,6 +38,20 @@ const Feed = () => {
 
   useEffect(() => {
     fetchPosts();
+  }, []);
+
+  // create order function
+
+  const { data: session } = useSession();
+
+  const [providers, setProviders] = useState(null);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      const res = await getProviders();
+      setProviders(res);
+    })();
   }, []);
 
   const filterPrompts = (searchtext) => {
@@ -69,17 +86,42 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed'>
-      <form className='relative w-full flex-center'>
+    <section className="feed">
+      <form className="relative w-full flex-center">
         <input
-          type='text'
-          placeholder='Search for an Order or Request'
+          type="text"
+          placeholder="Search for an Order or Request"
           value={searchText}
           onChange={handleSearchChange}
           required
-          className='search_input peer'
+          className="search_input peer"
         />
       </form>
+
+      
+        {session?.user ? (
+          <div className="relative w-full flex-center p-2">
+            <Link href="/create-prompt" className="w-full black_btn_order">
+              Request Anything
+            </Link>
+          </div>
+        ) : (
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type="button"
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className="black_btn_order w-full"
+                >
+                  Sign up to get started
+                </button>
+              ))}
+          </>
+        )}
 
       {/* All Prompts */}
       {searchText ? (

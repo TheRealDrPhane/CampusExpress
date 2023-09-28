@@ -5,18 +5,21 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { formatDistanceToNow } from "date-fns";
+import { formatDistanceToNowStrict } from "date-fns";
+
 
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
 
-  function timeAgo(timestamp) {
-    return formatDistanceToNow(timestamp, { addSuffix: true });
-  }
+  const timestamp = new Date(post.createdAt);
 
-  const timestamp = new Date();
+  // function timeAgo(timestamp) {
+  //   return formatDistanceToNow(timestamp, { addSuffix: true });
+  // }
+
+  // const timestamp = new Date();
 
   const [copied, setCopied] = useState("");
 
@@ -45,8 +48,8 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
             <p class="text-xl font-bold overflow-ellipsis max-w-[180px] break-words text-gray-900 dark:text-white">
               {post.orderType}
             </p>
-            <p class="text-sm font-light text-gray-900 dark:text-white">
-              {timeAgo(timestamp)}
+            <p class="text-sm font-light overflow-ellipsis max-w-[120px] break-words text-gray-900 dark:text-white">
+            {formatDistanceToNowStrict(timestamp, { addSuffix: true })}
             </p>
           </div>
           <div onClick={handleProfileClick}>
